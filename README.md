@@ -1,11 +1,12 @@
-"# Ammusement-Park" 
+**Ammusement-Park**
+
 1. Project Overview 
 
-The Virtual Amusement Park Simulation is an interactive 3D environment developed using C++ and OpenGL. The project aims to simulate the atmosphere of a bustling theme park, featuring mechanical rides, dynamic lighting, autonomous agents (NPCs), and environmental effects. Users can explore the park, toggle between day and night modes, and experience a multisensory environment with synchronized audio. 
+The Virtual Amusement Park Simulation is an interactive 2D environment developed using C++ and OpenGL. The project aims to simulate the atmosphere of a bustling theme park, featuring mechanical rides, dynamic lighting, autonomous agents (NPCs), and environmental effects. Users can explore the park, toggle between day and night modes, and experience a multisensory environment with synchronized audio. 
 
 2. Key Features 
 
-Mechanical Rides & Animations 
+ Mechanical Rides & Animations 
 
 The park will feature 3–4 distinct rides with realistic motion patterns: 
 
@@ -15,7 +16,7 @@ Roller Coaster: A cart following a predefined spline path with varying speeds ba
 
 Merry-Go-Round: Rotating platform with vertical oscillating movement for the horses. 
 
-Physics-Based Control: Rides will feature realistic start-up (acceleration) and stop (deceleration) sequences. 
+Physics-Based Control: Rides will feature realistic start-up (acceleration) and stop (deceleration) sequences. In addition, the camera movement will also follow simple physics-based control, allowing smooth up, down, left, and right viewing. The camera moves gradually with acceleration and slowing effects, making navigation feel natural and comfortable while exploring the park. 
 
 Environment & Scenery 
 
