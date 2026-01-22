@@ -35,15 +35,41 @@ void drawTree(float x, float y, float size, bool isBush) {
     }
 }
 
+void drawTreeLine() {
+    float baseY = 0.20f;      // Horizon (top of grass)
+    float x = -1.05f;
+    int i = 0;
+
+    while (x <= 1.05f) {
+        float r = 0.065f + (i % 3) * 0.005f;
+
+        // Dark base (shadow)
+        setColor(0.08f, 0.40f, 0.08f);
+        drawCircle(x, baseY + r - 0.01f, r, 28);
+
+        // Mid tone
+        setColor(0.12f, 0.50f, 0.12f);
+        drawCircle(x, baseY + r + 0.005f, r * 0.85f, 28);
+
+        // Light top highlight
+        setColor(0.18f, 0.65f, 0.18f);
+        drawCircle(x, baseY + r + 0.02f, r * 0.65f, 28);
+
+        x += r * 1.25f;
+        i++;
+    }
+}
+
+
 void drawBackground() {
     glBegin(GL_QUADS);
     if (isNight) {
-        glColor3f(0.05f, 0.05f, 0.2f);
+        glColor3f(0.07f, 0.05f, 0.2f);
         glVertex2f(-1.0, 1.0); glVertex2f(1.0, 1.0);
         glColor3f(0.1f, 0.1f, 0.35f);
         glVertex2f(1.0, 0.0); glVertex2f(-1.0, 0.0);
     } else {
-        glColor3f(0.4f, 0.7f, 1.0f);
+        glColor3f(0.8f, 0.7f, 1.0f);
         glVertex2f(-1.0, 1.0); glVertex2f(1.0, 1.0);
         glColor3f(0.6f, 0.9f, 1.0f);
         glVertex2f(1.0, 0.0); glVertex2f(-1.0, 0.0);
@@ -64,9 +90,9 @@ void drawBackground() {
     glPopMatrix();
 
     glBegin(GL_QUADS);
-    setColor(0.2f, 0.7f, 0.2f);
+    setColor(0.0, 0.5, 0.0);
     glVertex2f(-1.0, 0.2f); glVertex2f(1.0, 0.2f);
-    setColor(0.1f, 0.6f, 0.1f);
+    setColor(0.13, 0.55, 0.13);
     glVertex2f(1.0, -1.0); glVertex2f(-1.0, -1.0);
     glEnd();
 
@@ -87,6 +113,9 @@ void drawBackground() {
     setColor(0.8f, 0.7f, 0.5f);
     drawOval(0.0f, 0.0f, 0.25f, 0.1f);
     glPopMatrix();
+
+
+    drawTreeLine();
 }
 
 void drawScenery() {
